@@ -1,0 +1,63 @@
+<HTML>
+<head>
+    <TITLE>
+        Калашников
+    </TITLE>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<BODY background="Background_menu2.jpg" link="gray" alink="gray" vlink="gray">
+
+    <FONT FACE="Arial" size=+3 color=white>
+        <A HREF="index.htm"><IMG align=center border=0 hspace=30 src="Home.jpg"></A>
+        <A HREF="Kalashnikov_dostijenia.htm"><IMG align=right border=0 hspace=30 src="Next.jpg"></A>
+        <H1 align="center">Михаил Тимофеевич Калашников -      </H1>
+        <IMG align=left border=0 hspace=30 src="Kalashnikov1.jpg">
+        <P align="left">
+            советский и российский конструктор стрелкового оружия,
+            доктор технических наук, генерал-лейтенант.
+            Родился 10 ноября 1919 года в селе Курья Алтайской губернии.
+            В 1930 году семья была сослана из Алтайского края в посёлок Нижняя Моховая
+            (Томская область) в результате раскулачивания.
+            В период службы в армии Калашников стал изобретателем и рационализатором.
+        </P>
+        <H1 align="center">Прежде чем перейти дальше дайте, пожалуйста, ответ на один вопрос... </H1>
+        <H2 align="center">Какие размеры имеет проверочная мишень, по которой ведется стрельба одиночными выстелами, во время испытаний автомата?  </H2>
+
+        <form id="rectangleForm">
+            <label for="width">Ширина:</label>
+            <input type="number" id="width" required>
+
+            <label for="height">Высота:</label>
+            <input type="number" id="height" required>
+
+            <button type="button" onclick="question()">Дать ответ</button>
+        </form>
+
+        <p id="result"></p>
+
+        <script>
+            function question() {
+                const width = parseFloat(document.getElementById("width").value);
+                const height = parseFloat(document.getElementById("height").value);
+
+                if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
+                    document.getElementById("result").innerHTML = "Пожалуйста, введите корректные положительные числа для ширины и высоты.";
+                    return;
+                }
+
+                let area;
+                if (width === 25 && height === 35) {
+                    area = "Это верный ответ! Поздравляю у вас отличная память!";
+                } else {
+                    area = "Очень жаль... Верный ответ: Ширина - 25, Высота - 35";
+                }
+                document.getElementById("result").innerHTML = "Результат: " + area;
+            }
+        </script>
+        <A HREF="Dokazatelstvo.htm">Нажми если ты не веришь и ждешь подтверждения верного ответа</A>
+        <BR><BR>
+    </FONT>
+    <BR><BR>
+
+</BODY>
+</HTML>
